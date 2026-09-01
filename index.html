@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 64 64%27%3E%3Crect width=%2764%27 height=%2764%27 rx=%278%27 fill=%27%231F3A5F%27/%3E%3Ctext x=%2732%27 y=%2744%27 font-family=%27Georgia,serif%27 font-size=%2736%27 text-anchor=%27middle%27 fill=%27%23FBFBF9%27%3EW%3C/text%3E%3C/svg%3E">
+<title>Wenxuan Wang</title>
+<meta name="description" content="Wenxuan Wang — PhD candidate in Economics at the Toulouse School of Economics, on the 2026–27 job market. Macroeconomics and labor economics.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=Source+Sans+3:wght@400;500;600&display=swap">
+<style>
+  :root {
+    color-scheme: light;
+    --paper: #FBFBF9;
+    --paper-2: #F2F3EF;
+    --ink: #1D2024;
+    --ink-2: #555B64;
+    --rule: #E0E2DD;
+    --accent: #1F3A5F;
+    --accent-2: #4A6A94;
+    --ph-bg: #FBEFC6;
+    --ph-fg: #6B4B00;
+    --serif: "Newsreader", Georgia, "Times New Roman", serif;
+    --sans: "Source Sans 3", "Helvetica Neue", Arial, sans-serif;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      color-scheme: dark;
+      --paper: #16181B;
+      --paper-2: #1E2125;
+      --ink: #E7E5E0;
+      --ink-2: #A6AAB1;
+      --rule: #2E3237;
+      --accent: #9DBBE3;
+      --accent-2: #7FA1CC;
+      --ph-bg: #3B2F10;
+      --ph-fg: #F3D57E;
+    }
+  }
+  :root[data-theme="dark"] {
+    color-scheme: dark;
+    --paper: #16181B;
+    --paper-2: #1E2125;
+    --ink: #E7E5E0;
+    --ink-2: #A6AAB1;
+    --rule: #2E3237;
+    --accent: #9DBBE3;
+    --accent-2: #7FA1CC;
+    --ph-bg: #3B2F10;
+    --ph-fg: #F3D57E;
+  }
+
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--serif);
+    font-size: 17.5px;
+    line-height: 1.6;
+    font-optical-sizing: auto;
+  }
+  a { color: var(--accent); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 0.18em; text-decoration-color: color-mix(in srgb, var(--accent) 45%, transparent); }
+  a:hover { text-decoration-color: var(--accent); }
+  a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 2px; }
+  p { margin: 0; }
+  p + p { margin-top: 0.9em; }
+  h1, h2, h3 { font-family: var(--serif); font-weight: 500; line-height: 1.15; margin: 0; text-wrap: balance; }
+
+  .wrap { max-width: 40rem; margin-inline: auto; padding-inline: 1.25rem; }
+
+  /* Draft banner — remove before making the page public */
+  .draft {
+    font-family: var(--sans); font-size: 0.86rem; line-height: 1.4;
+    background: var(--ph-bg); color: var(--ph-fg);
+    padding: 0.6rem 1.25rem;
+    display: flex; gap: 1rem; align-items: center; justify-content: center; flex-wrap: wrap;
+  }
+  .draft button {
+    font: inherit; font-weight: 600; color: inherit; background: transparent;
+    border: 1px solid currentColor; border-radius: 3px; padding: 0.15rem 0.6rem; cursor: pointer;
+  }
+  .draft button:focus-visible { outline: 2px solid currentColor; outline-offset: 2px; }
+
+  /* Placeholder text — everything in [brackets] */
+  .ph {
+    background: var(--ph-bg); color: var(--ph-fg);
+    border-bottom: 1px dashed currentColor;
+    padding: 0 0.15em; border-radius: 2px; font-style: normal;
+  }
+
+  /* Masthead */
+  .masthead {
+    display: flex; gap: 2rem; align-items: flex-start; justify-content: space-between;
+    padding-block: 3.5rem 2.5rem;
+  }
+  .masthead h1 { font-size: clamp(2.2rem, 6vw, 2.9rem); font-weight: 500; letter-spacing: -0.01em; }
+  .eyebrow {
+    font-family: var(--sans); font-size: 0.78rem; font-weight: 600;
+    letter-spacing: 0.09em; text-transform: uppercase; color: var(--accent);
+    margin-bottom: 0.7rem;
+  }
+  .lede { font-size: 1.05rem; color: var(--ink-2); margin-top: 0.8rem; font-style: italic; }
+  .portrait {
+    flex: 0 0 auto; width: 132px; height: 160px;
+    background: var(--paper-2); border: 1px solid var(--rule); border-radius: 3px;
+    display: grid; place-items: center; text-align: center;
+    font-family: var(--sans); font-size: 0.8rem; line-height: 1.35; color: var(--ink-2);
+    overflow: hidden;
+  }
+  .portrait img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+  nav.site {
+    display: flex; flex-wrap: wrap; gap: 0.35rem 1.5rem;
+    font-family: var(--sans); font-size: 0.8rem; font-weight: 600;
+    letter-spacing: 0.08em; text-transform: uppercase;
+    padding-block: 0.9rem; border-block: 1px solid var(--rule);
+  }
+  nav.site a { color: var(--ink-2); text-decoration: none; }
+  nav.site a:hover { color: var(--accent); }
+
+  /* Sections */
+  section { padding-block: 2.4rem; border-bottom: 1px solid var(--rule); }
+  section:last-of-type { border-bottom: 0; }
+  section h2 { font-size: 1.05rem; font-family: var(--sans); font-weight: 600; letter-spacing: 0.09em; text-transform: uppercase; color: var(--accent); margin-bottom: 1.2rem; }
+  .stack { display: grid; gap: 1.7rem; }
+
+  /* Paper entries */
+  .paper { display: grid; gap: 0.45rem; }
+  .paper .title { font-size: 1.25rem; font-weight: 500; line-height: 1.3; }
+  .jmp .title { font-size: 1.6rem; }
+  .meta {
+    font-family: var(--sans); font-size: 0.9rem; color: var(--ink-2);
+    display: flex; flex-wrap: wrap; gap: 0.3rem 0.9rem;
+  }
+  .meta .sep::before { content: "·"; color: var(--rule); }
+  .abstract { color: var(--ink); }
+  .abstract-label { font-family: var(--sans); font-size: 0.78rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-2); margin-top: 0.4rem; }
+  .links { font-family: var(--sans); font-size: 0.9rem; font-weight: 500; display: flex; flex-wrap: wrap; gap: 0.3rem 1.1rem; margin-top: 0.2rem; }
+  .links a { text-decoration: none; border-bottom: 1px solid color-mix(in srgb, var(--accent) 40%, transparent); }
+  .links a:hover { border-bottom-color: var(--accent); }
+
+  /* Definition-style rows for CV / teaching / contact */
+  .rows { display: grid; grid-template-columns: 9.5rem 1fr; gap: 0.55rem 1.2rem; align-items: baseline; }
+  .rows dt { font-family: var(--sans); font-size: 0.9rem; color: var(--ink-2); margin: 0; }
+  .rows dd { margin: 0; }
+  @media (max-width: 560px) {
+    .rows { grid-template-columns: 1fr; gap: 0.15rem; }
+    .rows dt { margin-top: 0.7rem; }
+    .masthead { flex-direction: column-reverse; gap: 1.4rem; padding-top: 2.5rem; }
+    .portrait { width: 108px; height: 130px; }
+  }
+
+  footer { font-family: var(--sans); font-size: 0.82rem; color: var(--ink-2); padding-block: 1.5rem 3rem; border-top: 1px solid var(--rule); }
+
+  @media print {
+    .draft { display: none; }
+    .ph { background: none; border: 0; }
+    body { font-size: 11pt; }
+  }
+</style>
+</head>
+<body>
+
+
+<header class="wrap">
+  <div class="masthead">
+    <div>
+      <p class="eyebrow">PhD Candidate in Economics · Toulouse School of Economics</p>
+      <h1>Wenxuan Wang</h1>
+      <p class="lede">Macroeconomics · Labor economics</p>
+    </div>
+    <div class="portrait" aria-label="Portrait placeholder">Photo<br><span class="ph">[replace]</span></div>
+  </div>
+  <nav class="site" aria-label="Sections">
+    <a href="#about">About</a>
+    <a href="#jmp">Job Market Paper</a>
+    <a href="#research">Research</a>
+    <a href="#cv" hidden>CV &amp; Teaching</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<main class="wrap">
+
+  <section id="about">
+    <p>I am a PhD candidate in Economics at the Toulouse School of Economics. My research is in macroeconomics and labor economics, with a particular interest in bargaining under incomplete information.</p>
+    <p>My job market paper studies wage bargaining when workers and firms hold dispersed beliefs about the value of a match. Belief dispersion makes both matching efficiency and bargaining power endogenous, and I show that this mechanism amplifies the response of unemployment to productivity shocks and helps resolve the unemployment volatility puzzle. In a second paper I study reputational bargaining under a deterministic deadline, where reputation building generates strategic brinkmanship and a U-shaped pattern of agreements.</p>
+    <p>I am on the 2026–27 academic job market and will be available for interviews at <span class="ph">[EJME 2026 / ASSA 2027]</span>.<span hidden> My CV is available <a href="#cv">here</a>.</span></p>
+  </section>
+
+  <section id="jmp">
+    <h2>Job Market Paper</h2>
+    <article class="paper jmp">
+      <p class="title">Belief Dispersion, Matching Efficiency and Unemployment Dynamics</p>
+      <p class="meta"><span>Draft: <span class="ph">[Month 2026]</span></span><span class="sep"></span><span>Committee: <span class="ph">[Advisor names]</span></span></p>
+      <p class="abstract-label">Abstract <span class="ph">[draft — revise]</span></p>
+      <p class="abstract">This paper studies how dispersed beliefs about the value of a match shape unemployment dynamics. I embed a bargaining game with noisy private signals into a search-and-matching model of the labor market. Belief dispersion makes endogenous two objects that are usually treated as fixed parameters: the probability that a contact results in a hire (matching efficiency) and the division of the surplus (bargaining power), both of which depend on the size of the surplus relative to the dispersion of beliefs. The mechanism has two consequences. First, because the worker's payoff from a contact is an information rent, denominated in units of belief dispersion rather than in units of the surplus, it responds less than proportionally to productivity: a shock that scales output, the value of non-market time, and vacancy costs proportionally still moves market tightness, so productivity is non-neutral and its effect on unemployment is amplified without requiring a small fundamental surplus. Second, changes in belief dispersion are themselves a source of unemployment fluctuations. I show that the amplification relative to Nash bargaining is bounded by the inverse of the matching elasticity, and that this bound is approached, not eliminated, as information frictions become arbitrarily small: what matters is the size of the friction relative to the discount and separation rates. In a calibrated version of the model, productivity and belief-dispersion shocks together generate unemployment volatility about six times larger than in the standard model, with the dispersion shock contributing the larger share.</p>
+      <p class="links"><a href="#">Paper (PDF) <span class="ph">[link]</span></a><a href="#">Slides <span class="ph">[link]</span></a></p>
+    </article>
+  </section>
+
+  <section id="research">
+    <h2>Working Papers</h2>
+    <div class="stack">
+      <article class="paper">
+        <p class="title">Reputational Bargaining with Deterministic Deadline</p>
+        <p class="meta"><span>Presented at the TSE Theory Workshop, March 2026</span></p>
+        <p class="abstract">Negotiations often face a publicly known, sharp deadline, and such negotiations feature both a surge of agreements just before the deadline and costly breakdowns. This paper studies a continuous-time reputational bargaining game in the tradition of Abreu and Gul (2000) that ends at a deterministic date. Each player may be a commitment type who insists on a fixed demand, and rational players build reputation by mimicking these types in a war of attrition. When the deadline is far, the equilibrium is unique, the deadline is payoff-irrelevant, and concession is continuous, as in Abreu and Gul. When the deadline binds, concession has a two-phase structure: an initial phase of concession at a constant rate, followed by a silent period in which both players wait for the deadline and concede there with positive probability. When the deadline is close, the player with the larger commitment demand strategically holds out at the deadline, so feasible trade fails with positive probability. When it is closer still, all trade occurs either at the start or at the deadline, giving a sharp U-shaped concession pattern, and multiple equilibria with one- or two-sided brinkmanship arise when the priors on commitment types are small. The probability of trade is increasing in the length of the deadline under one-sided brinkmanship, and welfare is non-monotone in the deadline. With a stochastic deadline, uniqueness is restored when the probability that the deadline binds is small enough.</p>
+        <p class="links"><a href="#">Slides (PDF) <span class="ph">[link]</span></a></p>
+      </article>
+    </div>
+  </section>
+
+  <!-- CV & Teaching: hidden for now. Remove the `hidden` attribute below (and on the nav link and the bio sentence) to show it. -->
+  <section id="cv" hidden>
+    <h2>Curriculum Vitae</h2>
+    <dl class="rows">
+      <dt>CV</dt>
+      <dd><a href="#">Download CV (PDF) <span class="ph">[link]</span></a></dd>
+      <dt>Education</dt>
+      <dd>PhD in Economics, Toulouse School of Economics, <span class="ph">[year]</span> (expected)<br>
+          <span class="ph">[MSc / MA, Institution, year]</span><br>
+          <span class="ph">[BA / BSc, Institution, year]</span></dd>
+      <dt>Fields</dt>
+      <dd>Macroeconomics, Labor Economics</dd>
+    </dl>
+
+    <h2 style="margin-top: 2.4rem;">Teaching</h2>
+    <dl class="rows">
+      <dt><span class="ph">[Year]</span></dt>
+      <dd><span class="ph">[Course name]</span> (teaching assistant), <span class="ph">[Instructor]</span></dd>
+      <dt><span class="ph">[Year]</span></dt>
+      <dd><span class="ph">[Course name]</span> (teaching assistant), <span class="ph">[Instructor]</span></dd>
+    </dl>
+  </section>
+
+  <section id="contact">
+    <h2>Contact</h2>
+    <dl class="rows">
+      <dt>Email</dt>
+      <dd><a href="#"><span class="ph">[wenxuan.wang@tse-fr.eu]</span></a></dd>
+      <dt>Office</dt>
+      <dd>Office T602<br>Toulouse School of Economics, Toulouse, France</dd>
+      <dt hidden>Elsewhere</dt>
+      <dd hidden><a href="#">GitHub <span class="ph">[link]</span></a></dd>
+    </dl>
+  </section>
+
+</main>
+
+<footer class="wrap">
+  Last updated <span id="updated">September 2026</span>.
+</footer>
+<script>
+  // Shows the current month and year. Replace with a fixed date if you prefer the true edit date.
+  (function () {
+    var el = document.getElementById('updated');
+    if (el) el.textContent = new Date().toLocaleDateString('en-US', { month: 'long', year: 'numeric' });
+  })();
+</script>
+</body>
+</html>
