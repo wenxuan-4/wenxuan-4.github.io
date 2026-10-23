@@ -104,6 +104,9 @@
   .hero.has-photo { grid-template-columns: 11.5rem minmax(0, 1fr); }
   .photo { margin: 0; aspect-ratio: 4 / 5; max-width: 100%; border-radius: 6px; overflow: hidden; background: var(--bg-2); }
   .photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .photo-placeholder { display: grid; place-items: center; position: relative; border: 1px solid var(--rule); }
+  .photo-placeholder .initials { font-family: var(--serif); font-size: 3.2rem; font-weight: 600; line-height: 1; letter-spacing: 0.02em; color: var(--accent); }
+  .photo-placeholder figcaption { position: absolute; left: 0; right: 0; bottom: 0.8rem; text-align: center; font-size: 0.78rem; letter-spacing: 0.02em; color: var(--ink-2); }
   .intro { display: grid; gap: 1.1rem; min-width: 0; }
   .intro h1 { font-family: var(--serif); font-size: clamp(2.3rem, 6vw, 3rem); line-height: 1.06; letter-spacing: -0.015em; }
   .role { font-size: 1.06rem; color: var(--ink-2); line-height: 1.45; margin-top: -0.35rem; }
@@ -139,7 +142,7 @@
   .status { font-size: 0.93rem; font-style: italic; color: var(--ink-2); }
   .toggle::after { content: "+"; font-weight: 600; }
   .toggle[aria-expanded="true"]::after { content: "\2212"; }
-  .abstract { font-size: 1rem; line-height: 1.68; padding-top: 0.35rem; max-width: 43rem; }
+  .abstract { font-size: 1rem; line-height: 1.68; padding-top: 0.35rem; text-align: justify; -webkit-hyphens: auto; hyphens: auto; }
 
   /* Teaching */
   .courses { list-style: none; margin: 0; padding: 0; display: grid; }
@@ -176,13 +179,17 @@
   </div>
 </header>
 
-<main class="wrap">
+<main class="wrap" lang="en">
 
   <!-- HOME -->
   <section class="page" id="page-home" data-page="home" aria-labelledby="home-h">
-    <!-- When the photo arrives: add class "has-photo" to .hero and put
-         <figure class="photo"><img src="…" alt="Wenxuan Wang"></figure> as its first child. -->
-    <div class="hero">
+    <!-- Photo placeholder until the photo arrives. Then replace the placeholder figure with
+         <figure class="photo"><img src="data:image/jpeg;base64,…" alt="Wenxuan Wang"></figure>. -->
+    <div class="hero has-photo">
+      <figure class="photo photo-placeholder">
+        <span class="initials" aria-hidden="true">WW</span>
+        <figcaption>Photo coming soon</figcaption>
+      </figure>
       <div class="intro">
         <h1 id="home-h">Wenxuan Wang</h1>
         <p class="role">PhD Candidate in Economics<br>Toulouse School of Economics</p>
@@ -263,7 +270,7 @@
       </article>
       <article class="paper">
         <h3 class="paper-title">Heavy Tails and Professional Forecasters Analysis: Application to Information Rigidities and the Expectations Formation Process</h3>
-        <p class="paper-meta">with Nour Meddahi and Jihyun Kim</p>
+        <p class="paper-meta">with Jihyun Kim and Nour Meddahi</p>
         <div class="paper-actions">
           <button type="button" class="btn btn-sm toggle" aria-expanded="true" aria-controls="abs-ft">Abstract</button>
         </div>
