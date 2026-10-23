@@ -1,264 +1,386 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 64 64%27%3E%3Crect width=%2764%27 height=%2764%27 rx=%278%27 fill=%27%231F3A5F%27/%3E%3Ctext x=%2732%27 y=%2744%27 font-family=%27Georgia,serif%27 font-size=%2736%27 text-anchor=%27middle%27 fill=%27%23FBFBF9%27%3EW%3C/text%3E%3C/svg%3E">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style>
 <title>Wenxuan Wang</title>
-<meta name="description" content="Wenxuan Wang — PhD candidate in Economics at the Toulouse School of Economics, on the 2026–27 job market. Macroeconomics and labor economics.">
+<meta name="description" content="Wenxuan Wang, PhD candidate in Economics at the Toulouse School of Economics, on the 2026–2027 academic job market. Macroeconomics, labor economics and bargaining theory.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=Source+Sans+3:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,400;0,600;1,400&family=Source+Serif+4:opsz,wght@8..60,500;8..60,600&display=swap">
 <style>
+  /* Layout: top bar (name left, pages right) over one 46rem column; each page is a view switched by #hash. */
   :root {
     color-scheme: light;
-    --paper: #FBFBF9;
-    --paper-2: #F2F3EF;
-    --ink: #1D2024;
-    --ink-2: #555B64;
-    --rule: #E0E2DD;
-    --accent: #1F3A5F;
-    --accent-2: #4A6A94;
-    --ph-bg: #FBEFC6;
-    --ph-fg: #6B4B00;
-    --serif: "Newsreader", Georgia, "Times New Roman", serif;
-    --sans: "Source Sans 3", "Helvetica Neue", Arial, sans-serif;
+    --bg: #FFFFFF;
+    --bg-2: #F2F5F7;
+    --ink: #172026;
+    --ink-2: #56626B;
+    --rule: #DFE5E9;
+    --accent: #166B8A; /* TSE blue, taken from the TSE logo */
+    --accent-ink: #FFFFFF;
+    --serif: "Source Serif 4", "Source Serif Pro", Georgia, "Times New Roman", serif;
+    --sans: "Source Sans 3", "Source Sans Pro", "Helvetica Neue", Arial, sans-serif;
   }
   @media (prefers-color-scheme: dark) {
     :root:not([data-theme="light"]) {
       color-scheme: dark;
-      --paper: #16181B;
-      --paper-2: #1E2125;
-      --ink: #E7E5E0;
-      --ink-2: #A6AAB1;
-      --rule: #2E3237;
-      --accent: #9DBBE3;
-      --accent-2: #7FA1CC;
-      --ph-bg: #3B2F10;
-      --ph-fg: #F3D57E;
+      --bg: #11161A;
+      --bg-2: #182026;
+      --ink: #E8EDF0;
+      --ink-2: #9AA8B1;
+      --rule: #26313A;
+      --accent: #6FB6D2;
+      --accent-ink: #0B1E26;
     }
   }
   :root[data-theme="dark"] {
     color-scheme: dark;
-    --paper: #16181B;
-    --paper-2: #1E2125;
-    --ink: #E7E5E0;
-    --ink-2: #A6AAB1;
-    --rule: #2E3237;
-    --accent: #9DBBE3;
-    --accent-2: #7FA1CC;
-    --ph-bg: #3B2F10;
-    --ph-fg: #F3D57E;
+    --bg: #11161A;
+    --bg-2: #182026;
+    --ink: #E8EDF0;
+    --ink-2: #9AA8B1;
+    --rule: #26313A;
+    --accent: #6FB6D2;
+    --accent-ink: #0B1E26;
   }
 
   * { box-sizing: border-box; }
   html { -webkit-text-size-adjust: 100%; }
   body {
     margin: 0;
-    background: var(--paper);
+    background: var(--bg);
     color: var(--ink);
-    font-family: var(--serif);
-    font-size: 17.5px;
+    font-family: var(--sans);
+    font-size: 17px;
     line-height: 1.6;
-    font-optical-sizing: auto;
   }
-  a { color: var(--accent); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 0.18em; text-decoration-color: color-mix(in srgb, var(--accent) 45%, transparent); }
-  a:hover { text-decoration-color: var(--accent); }
-  a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 2px; }
+  a { color: var(--accent); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 0.2em; text-decoration-color: color-mix(in srgb, var(--accent) 40%, transparent); }
+  a:hover { text-decoration-color: currentColor; }
+  a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 4px; }
   p { margin: 0; }
-  p + p { margin-top: 0.9em; }
-  h1, h2, h3 { font-family: var(--serif); font-weight: 500; line-height: 1.15; margin: 0; text-wrap: balance; }
+  h1, h2, h3 { margin: 0; font-weight: 600; text-wrap: balance; }
 
-  .wrap { max-width: 40rem; margin-inline: auto; padding-inline: 1.25rem; }
+  .wrap { max-width: 46rem; margin-inline: auto; padding-inline: 1.25rem; }
 
-  /* Draft banner — remove before making the page public */
-  .draft {
-    font-family: var(--sans); font-size: 0.86rem; line-height: 1.4;
-    background: var(--ph-bg); color: var(--ph-fg);
-    padding: 0.6rem 1.25rem;
-    display: flex; gap: 1rem; align-items: center; justify-content: center; flex-wrap: wrap;
-  }
-  .draft button {
-    font: inherit; font-weight: 600; color: inherit; background: transparent;
-    border: 1px solid currentColor; border-radius: 3px; padding: 0.15rem 0.6rem; cursor: pointer;
-  }
-  .draft button:focus-visible { outline: 2px solid currentColor; outline-offset: 2px; }
-
-  /* Placeholder text — everything in [brackets] */
-  .ph {
-    background: var(--ph-bg); color: var(--ph-fg);
-    border-bottom: 1px dashed currentColor;
-    padding: 0 0.15em; border-radius: 2px; font-style: normal;
+  /* Top bar */
+  .topbar { border-bottom: 1px solid var(--rule); }
+  .bar { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 0.4rem 1.5rem; padding-block: 1.15rem; }
+  .brand { font-family: var(--serif); font-size: 1.2rem; font-weight: 600; color: var(--ink); text-decoration: none; letter-spacing: -0.005em; }
+  .nav { display: flex; flex-wrap: wrap; align-items: baseline; gap: 0.2rem 1.4rem; font-size: 0.98rem; }
+  .nav a { color: var(--ink-2); text-decoration: none; padding-block: 0.15rem; border-bottom: 2px solid transparent; }
+  .nav a:hover { color: var(--ink); }
+  .nav a[aria-current="page"] { color: var(--ink); border-bottom-color: var(--accent); }
+  .tag {
+    font-size: 0.66rem; font-weight: 600; letter-spacing: 0.06em; line-height: 1;
+    color: var(--accent); border: 1px solid color-mix(in srgb, var(--accent) 45%, transparent);
+    border-radius: 3px; padding: 0.12rem 0.25rem; margin-left: 0.3rem; vertical-align: 0.15em;
   }
 
-  /* Masthead */
-  .masthead {
-    display: flex; gap: 2rem; align-items: flex-start; justify-content: space-between;
-    padding-block: 3.5rem 2.5rem;
-  }
-  .masthead h1 { font-size: clamp(2.2rem, 6vw, 2.9rem); font-weight: 500; letter-spacing: -0.01em; }
-  .eyebrow {
-    font-family: var(--sans); font-size: 0.78rem; font-weight: 600;
-    letter-spacing: 0.09em; text-transform: uppercase; color: var(--accent);
-    margin-bottom: 0.7rem;
-  }
-  .lede { font-size: 1.05rem; color: var(--ink-2); margin-top: 0.8rem; font-style: italic; }
-  .portrait {
-    flex: 0 0 auto; width: 132px; height: 160px;
-    background: var(--paper-2); border: 1px solid var(--rule); border-radius: 3px;
-    display: grid; place-items: center; text-align: center;
-    font-family: var(--sans); font-size: 0.8rem; line-height: 1.35; color: var(--ink-2);
-    overflow: hidden;
-  }
-  .portrait img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  main { padding-block: 3.25rem 4rem; }
+  .page { display: grid; gap: 2.75rem; }
 
-  nav.site {
-    display: flex; flex-wrap: wrap; gap: 0.35rem 1.5rem;
-    font-family: var(--sans); font-size: 0.8rem; font-weight: 600;
-    letter-spacing: 0.08em; text-transform: uppercase;
-    padding-block: 0.9rem; border-block: 1px solid var(--rule);
+  /* Labels */
+  .label { font-family: var(--sans); font-size: 0.78rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-2); }
+  .label.rule { display: flex; align-items: center; gap: 0.9rem; color: var(--accent); }
+  .label.rule::after { content: ""; flex: 1; height: 1px; background: var(--rule); }
+
+  /* Buttons */
+  .btn {
+    display: inline-flex; align-items: center; gap: 0.45rem;
+    font-family: var(--sans); font-size: 0.95rem; font-weight: 600; line-height: 1;
+    padding: 0.62rem 1rem; border-radius: 6px;
+    border: 1px solid var(--rule); background: transparent; color: var(--ink);
+    text-decoration: none; cursor: pointer;
   }
-  nav.site a { color: var(--ink-2); text-decoration: none; }
-  nav.site a:hover { color: var(--accent); }
+  .btn:hover { border-color: var(--accent); color: var(--accent); }
+  .btn-primary { background: var(--accent); border-color: var(--accent); color: var(--accent-ink); }
+  .btn-primary:hover { color: var(--accent-ink); background: color-mix(in srgb, var(--accent) 86%, var(--ink)); }
+  .btn-sm { font-size: 0.86rem; padding: 0.4rem 0.7rem; border-radius: 5px; }
 
-  /* Sections */
-  section { padding-block: 2.4rem; border-bottom: 1px solid var(--rule); }
-  section:last-of-type { border-bottom: 0; }
-  section h2 { font-size: 1.05rem; font-family: var(--sans); font-weight: 600; letter-spacing: 0.09em; text-transform: uppercase; color: var(--accent); margin-bottom: 1.2rem; }
-  .stack { display: grid; gap: 1.7rem; }
+  /* Home */
+  .hero { display: grid; gap: 2.25rem; align-items: start; }
+  .hero.has-photo { grid-template-columns: 11.5rem minmax(0, 1fr); }
+  .photo { margin: 0; aspect-ratio: 4 / 5; max-width: 100%; border-radius: 6px; overflow: hidden; background: var(--bg-2); }
+  .photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .intro { display: grid; gap: 1.1rem; min-width: 0; }
+  .intro h1 { font-family: var(--serif); font-size: clamp(2.3rem, 6vw, 3rem); line-height: 1.06; letter-spacing: -0.015em; }
+  .role { font-size: 1.06rem; color: var(--ink-2); line-height: 1.45; margin-top: -0.35rem; }
+  .bio { display: grid; gap: 0.8rem; font-size: 1.08rem; max-width: 38rem; }
+  .market { font-size: 1.08rem; font-weight: 600; color: var(--accent); }
+  .actions { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-top: 0.3rem; }
 
-  /* Paper entries */
-  .paper { display: grid; gap: 0.45rem; }
-  .paper .title { font-size: 1.25rem; font-weight: 500; line-height: 1.3; }
-  .jmp .title { font-size: 1.6rem; }
-  .meta {
-    font-family: var(--sans); font-size: 0.9rem; color: var(--ink-2);
-    display: flex; flex-wrap: wrap; gap: 0.3rem 0.9rem;
+  .facts { display: grid; grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr)); gap: 1.75rem 2.5rem; padding-top: 2.25rem; border-top: 1px solid var(--rule); }
+  .fact { display: grid; gap: 0.6rem; align-content: start; min-width: 0; }
+  .email-row { display: flex; flex-wrap: wrap; align-items: center; gap: 0.35rem 0.6rem; overflow-wrap: anywhere; }
+  .copy {
+    font-family: var(--sans); font-size: 0.76rem; font-weight: 600; letter-spacing: 0.04em; line-height: 1;
+    color: var(--ink-2); background: transparent;
+    border: 1px solid var(--rule); border-radius: 4px; padding: 0.28rem 0.5rem; cursor: pointer;
   }
-  .meta .sep::before { content: "·"; color: var(--rule); }
-  .abstract { color: var(--ink); }
-  .abstract-label { font-family: var(--sans); font-size: 0.78rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-2); margin-top: 0.4rem; }
-  .links { font-family: var(--sans); font-size: 0.9rem; font-weight: 500; display: flex; flex-wrap: wrap; gap: 0.3rem 1.1rem; margin-top: 0.2rem; }
-  .links a { text-decoration: none; border-bottom: 1px solid color-mix(in srgb, var(--accent) 40%, transparent); }
-  .links a:hover { border-bottom-color: var(--accent); }
+  .copy:hover { color: var(--accent); border-color: var(--accent); }
+  address { font-style: normal; color: var(--ink-2); line-height: 1.55; }
+  .plain { list-style: none; margin: 0; padding: 0; display: grid; gap: 0.2rem; }
 
-  /* Definition-style rows for CV / teaching / contact */
-  .rows { display: grid; grid-template-columns: 9.5rem 1fr; gap: 0.55rem 1.2rem; align-items: baseline; }
-  .rows dt { font-family: var(--sans); font-size: 0.9rem; color: var(--ink-2); margin: 0; }
-  .rows dd { margin: 0; }
+  /* Research */
+  .page-head { display: grid; gap: 0.55rem; }
+  .page-title { font-family: var(--serif); font-size: clamp(2rem, 5vw, 2.5rem); line-height: 1.1; letter-spacing: -0.01em; }
+  .lead { font-size: 1.06rem; color: var(--ink-2); }
+  .group { display: grid; gap: 1.9rem; }
+  .paper { display: grid; gap: 0.5rem; min-width: 0; }
+  .paper-title, .course-title { text-wrap: pretty; }
+  .paper-title { font-family: var(--serif); font-size: 1.3rem; line-height: 1.3; font-weight: 600; }
+  .jmp .paper-title { font-size: 1.55rem; line-height: 1.25; }
+  .paper-title a { color: inherit; text-decoration: none; }
+  .paper-title a:hover { color: var(--accent); }
+  .paper-meta { font-size: 0.98rem; color: var(--ink-2); }
+  .paper-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 0.5rem 0.9rem; margin-top: 0.2rem; }
+  .status { font-size: 0.93rem; font-style: italic; color: var(--ink-2); }
+  .toggle::after { content: "+"; font-weight: 600; }
+  .toggle[aria-expanded="true"]::after { content: "\2212"; }
+  .abstract { font-size: 1rem; line-height: 1.68; padding-top: 0.35rem; max-width: 43rem; }
+
+  /* Teaching */
+  .courses { list-style: none; margin: 0; padding: 0; display: grid; }
+  .course { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 0.2rem 1.5rem; padding-block: 1.15rem; border-top: 1px solid var(--rule); }
+  .course:last-child { border-bottom: 1px solid var(--rule); }
+  .course-main { display: grid; gap: 0.2rem; min-width: 0; }
+  .course-title { font-family: var(--serif); font-size: 1.2rem; line-height: 1.3; font-weight: 600; }
+  .course-level { font-size: 0.98rem; color: var(--ink-2); }
+  .course-years { font-size: 0.98rem; color: var(--ink-2); font-variant-numeric: tabular-nums; white-space: nowrap; }
+  .award { font-size: 0.95rem; font-weight: 600; color: var(--accent); }
+
+  .foot { padding-block: 1.4rem 2.5rem; border-top: 1px solid var(--rule); font-size: 0.86rem; color: var(--ink-2); }
+
   @media (max-width: 560px) {
-    .rows { grid-template-columns: 1fr; gap: 0.15rem; }
-    .rows dt { margin-top: 0.7rem; }
-    .masthead { flex-direction: column-reverse; gap: 1.4rem; padding-top: 2.5rem; }
-    .portrait { width: 108px; height: 130px; }
-  }
-
-  footer { font-family: var(--sans); font-size: 0.82rem; color: var(--ink-2); padding-block: 1.5rem 3rem; border-top: 1px solid var(--rule); }
-
-  @media print {
-    .draft { display: none; }
-    .ph { background: none; border: 0; }
-    body { font-size: 11pt; }
+    main { padding-block: 2.25rem 3rem; }
+    .hero.has-photo { grid-template-columns: 1fr; }
+    .hero.has-photo .photo { width: 9.5rem; }
+    .course { grid-template-columns: 1fr; }
+    .course-years { grid-row: 1; }
   }
 </style>
+<noscript><style>.page[hidden] { display: grid !important; }</style></noscript>
 </head>
 <body>
-
-
-<header class="wrap">
-  <div class="masthead">
-    <div>
-      <p class="eyebrow">PhD Candidate in Economics · Toulouse School of Economics</p>
-      <h1>Wenxuan Wang</h1>
-      <p class="lede">Macroeconomics · Labor economics</p>
-    </div>
-    <div class="portrait" aria-label="Portrait placeholder">Photo<br><span class="ph">[replace]</span></div>
+<header class="topbar">
+  <div class="wrap bar">
+    <a class="brand" href="#home">Wenxuan Wang</a>
+    <nav class="nav" aria-label="Pages">
+      <a href="#home" data-nav="home">Home</a>
+      <a href="#research" data-nav="research">Research</a>
+      <a href="#teaching" data-nav="teaching">Teaching</a>
+      <a href="https://drive.google.com/file/d/17yiOIPiu3EOKENNMGV05YrvG8IwEtNrb/view" target="_blank" rel="noopener">CV<span class="tag">PDF</span></a>
+    </nav>
   </div>
-  <nav class="site" aria-label="Sections">
-    <a href="#about">About</a>
-    <a href="#jmp">Job Market Paper</a>
-    <a href="#research">Research</a>
-    <a href="#cv" hidden>CV &amp; Teaching</a>
-    <a href="#contact">Contact</a>
-  </nav>
 </header>
 
 <main class="wrap">
 
-  <section id="about">
-    <p>I am a PhD candidate in Economics at the Toulouse School of Economics. My research is in macroeconomics and labor economics, with a particular interest in bargaining under incomplete information.</p>
-    <p>My job market paper studies wage bargaining when workers and firms hold dispersed beliefs about the value of a match. Belief dispersion makes both matching efficiency and bargaining power endogenous, and I show that this mechanism amplifies the response of unemployment to productivity shocks and helps resolve the unemployment volatility puzzle. In a second paper I study reputational bargaining under a deterministic deadline, where reputation building generates strategic brinkmanship and a U-shaped pattern of agreements.</p>
-    <p>I am on the 2026–27 academic job market and will be available for interviews at <span class="ph">[EJME 2026 / ASSA 2027]</span>.<span hidden> My CV is available <a href="#cv">here</a>.</span></p>
+  <!-- HOME -->
+  <section class="page" id="page-home" data-page="home" aria-labelledby="home-h">
+    <!-- When the photo arrives: add class "has-photo" to .hero and put
+         <figure class="photo"><img src="…" alt="Wenxuan Wang"></figure> as its first child. -->
+    <div class="hero">
+      <div class="intro">
+        <h1 id="home-h">Wenxuan Wang</h1>
+        <p class="role">PhD Candidate in Economics<br>Toulouse School of Economics</p>
+        <div class="bio">
+          <p>I am a PhD candidate in Economics at the Toulouse School of Economics. My research is in macroeconomics and labor economics, with a particular interest in bargaining under incomplete information.</p>
+          <p>My <a href="#research">job market paper</a> studies how wage bargaining shapes matching efficiency and unemployment fluctuations.</p>
+        </div>
+        <p class="market">I am on the 2026–2027 academic job market.</p>
+        <div class="actions">
+          <a class="btn btn-primary" href="#research">Research</a>
+          <a class="btn" href="https://drive.google.com/file/d/17yiOIPiu3EOKENNMGV05YrvG8IwEtNrb/view" target="_blank" rel="noopener">CV (PDF)</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="facts">
+      <div class="fact">
+        <h2 class="label">Contact</h2>
+        <p class="email-row"><a id="email-addr" href="mailto:wenxuan.wang@tse-fr.eu">wenxuan.wang@tse-fr.eu</a><button type="button" class="copy" id="copy-email">Copy</button></p>
+        <address>Office T602<br>Toulouse School of Economics<br>1, Esplanade de l’Université<br>31080 Toulouse Cedex 06, France</address>
+      </div>
+      <div class="fact">
+        <h2 class="label">Fields</h2>
+        <ul class="plain">
+          <li>Macroeconomics</li>
+          <li>Labor economics</li>
+          <li>Bargaining theory</li>
+        </ul>
+      </div>
+    </div>
   </section>
 
-  <section id="jmp">
-    <h2>Job Market Paper</h2>
-    <article class="paper jmp">
-      <p class="title">Belief Dispersion, Matching Efficiency and Unemployment Dynamics</p>
-      <p class="meta"><span>Draft: <span class="ph">[Month 2026]</span></span><span class="sep"></span><span>Committee: <span class="ph">[Advisor names]</span></span></p>
-      <p class="abstract-label">Abstract <span class="ph">[draft — revise]</span></p>
-      <p class="abstract">This paper studies how dispersed beliefs about the value of a match shape unemployment dynamics. I embed a bargaining game with noisy private signals into a search-and-matching model of the labor market. Belief dispersion makes endogenous two objects that are usually treated as fixed parameters: the probability that a contact results in a hire (matching efficiency) and the division of the surplus (bargaining power), both of which depend on the size of the surplus relative to the dispersion of beliefs. The mechanism has two consequences. First, because the worker's payoff from a contact is an information rent, denominated in units of belief dispersion rather than in units of the surplus, it responds less than proportionally to productivity: a shock that scales output, the value of non-market time, and vacancy costs proportionally still moves market tightness, so productivity is non-neutral and its effect on unemployment is amplified without requiring a small fundamental surplus. Second, changes in belief dispersion are themselves a source of unemployment fluctuations. I show that the amplification relative to Nash bargaining is bounded by the inverse of the matching elasticity, and that this bound is approached, not eliminated, as information frictions become arbitrarily small: what matters is the size of the friction relative to the discount and separation rates. In a calibrated version of the model, productivity and belief-dispersion shocks together generate unemployment volatility about six times larger than in the standard model, with the dispersion shock contributing the larger share.</p>
-      <p class="links"><a href="#">Paper (PDF) <span class="ph">[link]</span></a><a href="#">Slides <span class="ph">[link]</span></a></p>
-    </article>
-  </section>
+  <!-- RESEARCH -->
+  <section class="page" id="page-research" data-page="research" aria-labelledby="research-h" hidden>
+    <div class="page-head">
+      <h1 class="page-title" id="research-h">Research</h1>
+    </div>
 
-  <section id="research">
-    <h2>Working Papers</h2>
-    <div class="stack">
+    <div class="group">
+      <h2 class="label rule">Job Market Paper</h2>
+      <article class="paper jmp">
+        <h3 class="paper-title"><a href="https://drive.google.com/file/d/1g2NfnqkzxXh6HL1lALRk5KWJYHoCWmWU/view" target="_blank" rel="noopener">Bargaining, Matching Efficiency and Unemployment Fluctuations</a></h3>
+        <div class="paper-actions">
+          <button type="button" class="btn btn-sm toggle" aria-expanded="true" aria-controls="abs-jmp">Abstract</button>
+          <a class="btn btn-sm" href="https://drive.google.com/file/d/1g2NfnqkzxXh6HL1lALRk5KWJYHoCWmWU/view" target="_blank" rel="noopener">Paper (PDF)</a>
+        </div>
+        <div class="abstract" id="abs-jmp">
+          <p>Using business-cycle accounting, we show that a canonical search-and-matching model accounts for U.S. unemployment and vacancy fluctuations only if matching efficiency and the firm’s surplus share are procyclical and move together. To rationalize this comovement, we develop a model in which the worker is more likely to accept a more generous wage offer, so the firm trades off a larger share of the surplus against a higher probability of agreement. Higher productivity or lower uncertainty faced by the firm relaxes this trade-off, so the agreement probability, which plays the role of endogenous matching efficiency, rises together with the firm’s surplus share in booms. Quantitatively, the model can reproduce the firm’s measured surplus share while generating 85% of the volatility of measured matching efficiency. This microfounded comovement allows the model to account for the full volatility of unemployment and to match the joint fluctuations of unemployment and vacancies better than models with constant matching efficiency.</p>
+        </div>
+      </article>
+    </div>
+
+    <div class="group">
+      <h2 class="label rule">Working Papers</h2>
       <article class="paper">
-        <p class="title">Reputational Bargaining with Deterministic Deadline</p>
-        <p class="meta"><span>Presented at the TSE Theory Workshop, March 2026</span></p>
-        <p class="abstract">Negotiations often face a publicly known, sharp deadline, and such negotiations feature both a surge of agreements just before the deadline and costly breakdowns. This paper studies a continuous-time reputational bargaining game in the tradition of Abreu and Gul (2000) that ends at a deterministic date. Each player may be a commitment type who insists on a fixed demand, and rational players build reputation by mimicking these types in a war of attrition. When the deadline is far, the equilibrium is unique, the deadline is payoff-irrelevant, and concession is continuous, as in Abreu and Gul. When the deadline binds, concession has a two-phase structure: an initial phase of concession at a constant rate, followed by a silent period in which both players wait for the deadline and concede there with positive probability. When the deadline is close, the player with the larger commitment demand strategically holds out at the deadline, so feasible trade fails with positive probability. When it is closer still, all trade occurs either at the start or at the deadline, giving a sharp U-shaped concession pattern, and multiple equilibria with one- or two-sided brinkmanship arise when the priors on commitment types are small. The probability of trade is increasing in the length of the deadline under one-sided brinkmanship, and welfare is non-monotone in the deadline. With a stochastic deadline, uniqueness is restored when the probability that the deadline binds is small enough.</p>
-        <p class="links"><a href="#">Slides (PDF) <span class="ph">[link]</span></a></p>
+        <h3 class="paper-title">Reputational Bargaining with a Deterministic Deadline</h3>
+        <div class="paper-actions">
+          <button type="button" class="btn btn-sm toggle" aria-expanded="true" aria-controls="abs-rb">Abstract</button>
+          <!-- Slides button (Google Drive link) goes here once uploaded. -->
+        </div>
+        <div class="abstract" id="abs-rb">
+          <p>Deadlines cause inefficient breakdowns when players hold out to pressure the other side into conceding in pursuit of a higher payoff. I extend the reputational bargaining model with a deterministic deadline, which provides a transparent setting for isolating this mechanism. The model nests Abreu and Gul’s (2000) infinite-horizon equilibrium as a special case when the deadline is sufficiently distant. However, equilibrium uniqueness and continuous trade patterns in the infinite-horizon and stochastic-deadline benchmarks do not extend to a deterministic deadline. When the deadline is relatively close, the model predicts a discontinuous, sharply U-shaped trade pattern, with agreement concentrated at the outset and at the deadline. The resulting inefficient breakdowns are entirely strategic and rational players may deliberately miss the deadline despite feasible trade. Multiple equilibria can arise when players are sufficiently patient and likely to be rational.</p>
+        </div>
+      </article>
+    </div>
+
+    <div class="group">
+      <h2 class="label rule">Work in Progress</h2>
+      <article class="paper">
+        <h3 class="paper-title">A Filtering Approach to News-Based Measures: Application to the EPU Index</h3>
+        <p class="paper-meta">with Christian Gouriéroux, Dogukan Guney, Nour Meddahi, Serge Nyawa and Danfeng Yue</p>
+        <div class="paper-actions">
+          <button type="button" class="btn btn-sm toggle" aria-expanded="true" aria-controls="abs-epu">Abstract</button>
+        </div>
+        <div class="abstract" id="abs-epu">
+          <p>Text-based economic indices are widely used in empirical research, but their reliability depends on how they are built. Many of these indices are based on a dictionary of words and a set of newspapers, both chosen by the researcher. The resulting measures are sensitive to these choices and thus subject to measurement error. Drawing on the literature on volatility and realized volatility, we propose filtering methods, notably the Kalman filter, to reduce this error. We apply the approach to the Economic Policy Uncertainty (EPU) index of Baker, Bloom, and Davis (2016). In various regression analyses, the filtered index delivers more precise estimates and an improved empirical fit relative to the original measure. These findings show that filtering can make text-based economic indicators more reliable.</p>
+        </div>
+      </article>
+      <article class="paper">
+        <h3 class="paper-title">Heavy Tails and Professional Forecasters Analysis: Application to Information Rigidities and the Expectations Formation Process</h3>
+        <p class="paper-meta">with Nour Meddahi and Jihyun Kim</p>
+        <div class="paper-actions">
+          <button type="button" class="btn btn-sm toggle" aria-expanded="true" aria-controls="abs-ft">Abstract</button>
+        </div>
+        <div class="abstract" id="abs-ft">
+          <p>This paper examines linear regressions involving heavy-tailed variables with infinite variance. Although the statistical theory is well established, this issue is largely overlooked in the empirical literature. This is particularly true of studies relying on professional forecasts. To illustrate the importance of this issue, we revisit the influential work of Coibion and Gorodnichenko (2015), who develop a simple econometric framework for testing information rigidities in expectation formation. They show that forecast errors are predictable from revisions in expectations, a finding that contradicts the full-information rational expectations hypothesis. Their empirical results underscore the importance of information frictions and how these frictions vary over the business cycle. We estimate the tail behavior of the variables using several methods and find that many of them exhibit heavy tails. In the presence of heavy tails, the OLS estimator may fail to converge to the parameter of interest, converging instead to a non-degenerate random variable. Even when the OLS estimator is consistent, its asymptotic distribution is generally non-standard, often involving ratios of random variables with stable distributions. Moreover, standard bootstrap procedures are invalid in this setting, making subsampling a more appropriate alternative for statistical inference. These findings have important implications for the empirical results of Coibion and Gorodnichenko (2015), calling into question their robustness and, potentially, their validity. We employ estimation methods that remain consistent in the presence of heavy-tailed variables. These methods admit an instrumental variables interpretation, with instruments constructed as bounded functions of the heavy-tailed variables, such as their signs. Consistency requires only the existence of first moments, an assumption that we maintain and that is consistent with our empirical findings. We construct confidence intervals using subsampling procedures. Through Monte Carlo simulations, we demonstrate that both the proposed estimators and the associated confidence intervals exhibit good finite-sample properties. Using our alternative estimator, we find that the main parameter of interest in Coibion and Gorodnichenko (2015) is no longer statistically significant when symmetric confidence intervals are used but remains significant when equal-tailed and asymmetric confidence intervals are considered. We argue that asymmetric confidence intervals are more appropriate in this setting, as the limiting distribution of the estimator may itself be asymmetric.</p>
+        </div>
       </article>
     </div>
   </section>
 
-  <!-- CV & Teaching: hidden for now. Remove the `hidden` attribute below (and on the nav link and the bio sentence) to show it. -->
-  <section id="cv" hidden>
-    <h2>Curriculum Vitae</h2>
-    <dl class="rows">
-      <dt>CV</dt>
-      <dd><a href="#">Download CV (PDF) <span class="ph">[link]</span></a></dd>
-      <dt>Education</dt>
-      <dd>PhD in Economics, Toulouse School of Economics, <span class="ph">[year]</span> (expected)<br>
-          <span class="ph">[MSc / MA, Institution, year]</span><br>
-          <span class="ph">[BA / BSc, Institution, year]</span></dd>
-      <dt>Fields</dt>
-      <dd>Macroeconomics, Labor Economics</dd>
-    </dl>
-
-    <h2 style="margin-top: 2.4rem;">Teaching</h2>
-    <dl class="rows">
-      <dt><span class="ph">[Year]</span></dt>
-      <dd><span class="ph">[Course name]</span> (teaching assistant), <span class="ph">[Instructor]</span></dd>
-      <dt><span class="ph">[Year]</span></dt>
-      <dd><span class="ph">[Course name]</span> (teaching assistant), <span class="ph">[Instructor]</span></dd>
-    </dl>
-  </section>
-
-  <section id="contact">
-    <h2>Contact</h2>
-    <dl class="rows">
-      <dt>Email</dt>
-      <dd><a href="#"><span class="ph">[wenxuan.wang@tse-fr.eu]</span></a></dd>
-      <dt>Office</dt>
-      <dd>Office T602<br>Toulouse School of Economics, Toulouse, France</dd>
-      <dt hidden>Elsewhere</dt>
-      <dd hidden><a href="#">GitHub <span class="ph">[link]</span></a></dd>
-    </dl>
+  <!-- TEACHING -->
+  <section class="page" id="page-teaching" data-page="teaching" aria-labelledby="teaching-h" hidden>
+    <div class="page-head">
+      <h1 class="page-title" id="teaching-h">Teaching</h1>
+      <p class="lead">Teaching assistant at the Toulouse School of Economics</p>
+    </div>
+    <ul class="courses">
+      <li class="course">
+        <div class="course-main">
+          <h3 class="course-title">L2 Macroeconomics</h3>
+          <p class="course-level">Undergraduate</p>
+        </div>
+        <p class="course-years">2025–2026</p>
+      </li>
+      <li class="course">
+        <div class="course-main">
+          <h3 class="course-title">M1 Macroeconomics</h3>
+          <p class="course-level">Master’s</p>
+          <p class="award">Best Teaching Assistant Award, 2026</p>
+        </div>
+        <p class="course-years">2024–2026</p>
+      </li>
+      <li class="course">
+        <div class="course-main">
+          <h3 class="course-title">M1 Applied Econometrics</h3>
+          <p class="course-level">Master’s</p>
+        </div>
+        <p class="course-years">2023–2025</p>
+      </li>
+      <li class="course">
+        <div class="course-main">
+          <h3 class="course-title">ETE Econometrics</h3>
+          <p class="course-level">PhD course</p>
+          <p class="award">Best Teaching Assistant Award, 2023 and 2025</p>
+        </div>
+        <p class="course-years">2022–2025</p>
+      </li>
+    </ul>
   </section>
 
 </main>
 
-<footer class="wrap">
-  Last updated <span id="updated">September 2026</span>.
-</footer>
+<footer class="wrap foot">Last updated October 2026</footer>
+
 <script>
-  // Shows the current month and year. Replace with a fixed date if you prefer the true edit date.
   (function () {
-    var el = document.getElementById('updated');
-    if (el) el.textContent = new Date().toLocaleDateString('en-US', { month: 'long', year: 'numeric' });
+    // Page switching: #home, #research, #teaching
+    var pages = {};
+    document.querySelectorAll('.page').forEach(function (el) { pages[el.getAttribute('data-page')] = el; });
+    var names = { home: 'Wenxuan Wang', research: 'Research · Wenxuan Wang', teaching: 'Teaching · Wenxuan Wang' };
+    function route() {
+      var key = (location.hash || '').slice(1);
+      if (!pages[key]) key = 'home';
+      Object.keys(pages).forEach(function (k) { pages[k].hidden = (k !== key); });
+      document.querySelectorAll('[data-nav]').forEach(function (a) {
+        if (a.getAttribute('data-nav') === key) a.setAttribute('aria-current', 'page');
+        else a.removeAttribute('aria-current');
+      });
+      document.title = names[key];
+      window.scrollTo(0, 0);
+    }
+    window.addEventListener('hashchange', route);
+    route();
+
+    // Abstract toggles
+    document.querySelectorAll('.toggle').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var panel = document.getElementById(btn.getAttribute('aria-controls'));
+        var open = btn.getAttribute('aria-expanded') === 'true';
+        btn.setAttribute('aria-expanded', String(!open));
+        if (panel) panel.hidden = open;
+      });
+    });
+
+    // Copy email
+    var copyBtn = document.getElementById('copy-email');
+    var addr = document.getElementById('email-addr');
+    if (copyBtn && addr) {
+      var timer;
+      var show = function (label) {
+        copyBtn.textContent = label;
+        clearTimeout(timer);
+        timer = setTimeout(function () { copyBtn.textContent = 'Copy'; }, 1600);
+      };
+      var selectAddress = function () {
+        try {
+          var range = document.createRange();
+          range.selectNodeContents(addr);
+          var sel = window.getSelection();
+          sel.removeAllRanges();
+          sel.addRange(range);
+          show('Selected');
+        } catch (e) {}
+      };
+      copyBtn.addEventListener('click', function () {
+        var text = addr.textContent.trim();
+        try {
+          if (navigator.clipboard && navigator.clipboard.writeText) {
+            navigator.clipboard.writeText(text).then(function () { show('Copied'); }, selectAddress);
+          } else {
+            selectAddress();
+          }
+        } catch (e) {
+          selectAddress();
+        }
+      });
+    }
   })();
 </script>
 </body>
