@@ -1,0 +1,76 @@
+# Keeps https://wenxuan-4.github.io/ in sync with the copy of index.html that the
+# daily website sync saves in Google Drive (My Mac > applications > 0_CV > website).
+name: Update website from Google Drive
+
+on:
+  schedule:
+    - cron: "17 */3 * * *"   # every 3 hours (UTC)
+  workflow_dispatch:          # "Run workflow" button in the Actions tab
+  push:
+    branches: [main]          # also publish files uploaded by hand
+
+permissions:
+  contents: write   # save the new index.html in this repository
+  pages: write      # publish to GitHub Pages
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+env:
+  DRIVE_FILE_ID: "18-X398IUjHCBerjNx_9tk_FzfP1bnKyI"
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    outputs:
+      changed: ${{ steps.fetch.outputs.changed }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Get the latest index.html from Google Drive
+        id: fetch
+        # A failed download fails scheduled runs (so GitHub emails you),
+        # but never blocks publishing files you uploaded yourself.
+        continue-on-error: ${{ github.event_name != 'schedule' }}
+        run: |
+          curl -fsSL --retry 3 -o /tmp/index.html "https://drive.usercontent.google.com/download?id=${DRIVE_FILE_ID}&export=download"
+          # Accept only the real page, never an error page
+          [[ "$(head -c 15 /tmp/index.html)" == "<!doctype html>" ]]
+          grep -q '<header class="topbar">' /tmp/index.html
+          if cmp -s /tmp/index.html index.html; then
+            echo "The website is already up to date."
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+          else
+            cp /tmp/index.html index.html
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add index.html
+            git commit -m "Update index.html from Google Drive"
+            git push
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          fi
+
+  deploy:
+    needs: check
+    if: needs.check.outputs.changed == 'true' || github.event_name != 'schedule'
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          ref: main
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: "."
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v5
